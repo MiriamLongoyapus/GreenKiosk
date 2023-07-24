@@ -1,5 +1,7 @@
 from django.db import models
 from customer.models import Customer
+from cart.models import Cart
+from delivery.models import Delivery
 
 
 
@@ -7,7 +9,7 @@ from customer.models import Customer
 # Create your models here.
 class Order(models.Model):
     customer = models.OneToOneField(Customer, null=True, on_delete=models.CASCADE)
-    Cartart=models.ForeignKey(Cart, null=True, on_delete=models.CASCADE)
+    cart=models.ForeignKey(Cart, null=True, on_delete=models.CASCADE)
     delivery=models.ManyToManyField(Delivery)
     order_number = models.CharField(max_length=50)
     customer_name = models.CharField(max_length=100)
