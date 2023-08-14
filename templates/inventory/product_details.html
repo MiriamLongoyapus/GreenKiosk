@@ -3,11 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+    {% load static %}
+    <link ref="stylesheet" href="{% static 'Css/product_details.css' %}"/>
+    <title>Product Details</title>
 <body>
-    <img src="{{product.image.url}}" alt="Product image">
-    <h4>{{product.title}}</h4>
+    <h4>{{product.name}}</h4>
+    <img src="{{product.image.url}}">
     <p>{{product.description}}</p>
     <p>{{product.price}}</p>
     <button>Add to Cart</button>

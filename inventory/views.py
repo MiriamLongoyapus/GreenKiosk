@@ -15,3 +15,7 @@ def product_list(request):
 def product_detail_view(request, id):
     product=Product.objects.get(id=id)
     return render(request,"inventory/product_details.html",{"product": product})
+
+def product_edit_view(request, id):
+    product=Product.objects.get(id=id)
+    return render(request,"inventory/product_details.html",{"product": product})

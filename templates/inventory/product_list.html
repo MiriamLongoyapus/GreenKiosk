@@ -4,25 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
+    <style>
+        
+
+
+
+    </style>
+
+
+
+
 </head>
 <body>
     <h3>Product List</h3>
-    <table>
+    <div>
         <th>
             <td>Name</td>
             <td>Description</td>
             <td>Price</td>
         </th>
         {% for product in product%}
-        <tr>
-            <td>{{product.name}}</td>
-            <td>{{product.description}}</td>
-            <td>{{product.price}}</td>
-            <td><a href="{% url 'product_detail_view' id=product.id %}">View Product</a></td>
-            <td><a href="{% url edit_product_view id=product.id %}">Edit Product</a> </td>
+        <div>
+            <h3>{{product.name}}</h3>
+            <p>{{product.description}}</p>
+            <p>{{product.price}}</p>
+            <a href="{% url 'product_detail_view' id=product.id %}">View Product</a>
 
-        </tr>
+        </div>
         {% endfor %}
-    </table>
+    </div>
 </body>
 </html>
