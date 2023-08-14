@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Customer</title>
+</head>
+<body>
+    <h2>Edit Customer</h2>
+    <form method="POST" class="post-form">{% csrf_token %}
+        {{ form.as_table }}
+        <button type="submit" class="save btn btn-default">Save</button>
+    </form>
+</body>
+</html>

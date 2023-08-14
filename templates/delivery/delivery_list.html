@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery List</title>
+</head>
+<body>
+    <h3>Delivery List</h3>
+    <table>
+        <thead>
+            <tr>
+                <th>Shipping Address</th>
+                <th>Recipient Name</th>
+                <th>Contact Email</th>
+                <th>Contact Phone</th>
+                <!-- You can add more columns here if needed -->
+            </tr>
+        </thead>
+        <tbody>
+            {% for delivery in deliveries %}
+            <tr>
+                <td>{{ delivery.shipping_address }}</td>
+                <td>{{ delivery.recipient_name }}</td>
+                <td>{{ delivery.contact_email }}</td>
+                <td>{{ delivery.contact_phone }}</td>
+                <!-- Adjust the link URL and text as needed -->
+                <td><a href="{% url 'delivery_details_view' id=delivery.id %}">View Delivery</a></td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

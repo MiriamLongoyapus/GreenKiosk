@@ -6,19 +6,21 @@
     <title>Document</title>
 </head>
 <body>
-    <h3>Products List</h3>
+    <h3>Product List</h3>
     <table>
         <th>
             <td>Name</td>
             <td>Description</td>
             <td>Price</td>
         </th>
-        {% for product in products%}
+        {% for product in product%}
         <tr>
             <td>{{product.name}}</td>
             <td>{{product.description}}</td>
             <td>{{product.price}}</td>
-            <td><a href="{% url 'product_details_view' id=product.id %}">View Product</a></td>
+            <td><a href="{% url 'product_detail_view' id=product.id %}">View Product</a></td>
+            <td><a href="{% url edit_product_view id=product.id %}">Edit Product</a> </td>
+
         </tr>
         {% endfor %}
     </table>

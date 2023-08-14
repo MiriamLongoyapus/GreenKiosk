@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delivery Details</title>
+</head>
+<body>
+    <h3>Delivery Details</h3>
+    <div>
+        <img src="{{ product.image.url }}" alt="Product image">
+        <h4>{{ product.title }}</h4>
+        <p>{{ product.description }}</p>
+        <span>Price: {{ product.price }}</span>
+    </div>
+    <hr>
+    <h4>Delivery Information</h4>
+    <p><strong>Shipping Address:</strong> {{ delivery_info.shipping_address }}</p>
+    <p><strong>Recipient Name:</strong> {{ delivery_info.recipient_name }}</p>
+    <p><strong>Contact Email:</strong> {{ delivery_info.contact_email }}</p>
+    <p><strong>Contact Phone:</strong> {{ delivery_info.contact_phone }}</p>
+    <!-- You can add more delivery-related details here -->
+    <hr>
+    <button>Confirm Order</button>
+</body>
+</html>
