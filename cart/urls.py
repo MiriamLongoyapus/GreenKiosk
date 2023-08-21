@@ -1,8 +1,8 @@
 from django.urls import path
-from .views import product_upload_view, cart_list, add_to_cart
+from . import views
 
-urlpatterns= [
-    path("products/get/", product_upload_view,name="product_get_view"),
-    path('cart/add_to_cart/', add_to_cart, name='add_to_cart'),
-    path('cart/', cart_list, name='cart_list'),
+urlpatterns = [
+    # ... other URL patterns ...
+    path('cart-upload/', views.cart_upload_view, name='cart_upload_view'),
+   
 ]

@@ -6,10 +6,10 @@
     <title>Document</title>
 </head>
 <body>
-<form method="POST" class="ulpoad_form">
-        {%csrf_token%}
-        {{form.as_p}}
-         <button type="submit">Save</button>
-       </form>
+    <h2>Cart Upload Form</h2>
+    <form method="POST" class="upload_form">{% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Save</button>
+    </form>
 </body>
 </html>

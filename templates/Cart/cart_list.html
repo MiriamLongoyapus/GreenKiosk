@@ -19,7 +19,7 @@
     <h3> cart list </h3>
     <ul >
         {% for cart_item in cart_items %}
-        <li>
+        <div>
             {% if cart_item.image %}
             <img class="image" src="{{cart_item.image.url}}" alt="Image"/> <br>
             {% else %}
@@ -28,8 +28,10 @@
               Name: {{ cart_item.name }} <br>
               Quantity: {{ cart_item.quantity_of_items}}  <br>
               Price: ${{ cart_item.price }} <br>
-        </li>
+        </div>
         {% endfor %}
+        <a href="{% url 'cart_list'%}"><button class="add_to_cart">Add to cart</button></a>
+        <button class="add-to-cart-btn">Delete from Cart</button>   
     </ul>
 </body>
 </html>
