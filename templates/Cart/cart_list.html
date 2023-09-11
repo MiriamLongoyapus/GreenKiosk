@@ -3,35 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'inventory/product_list.css' %}">
     <title>Document</title>
-    <style>
-        .image{
-        padding: 10px;
-        margin: 5px;
-        display: grid;
-        justify-content: center;
-        display: grid;
-        grid-template-columns: repeat(4, 4fr);
-        }
-    </style>
+
+    
 </head>
 <body>
-    <h3> cart list </h3>
-    <ul >
-        {% for cart_item in cart_items %}
-        <div>
-            {% if cart_item.image %}
-            <img class="image" src="{{cart_item.image.url}}" alt="Image"/> <br>
-            {% else %}
-            No Image Available
-        {% endif %}
-              Name: {{ cart_item.name }} <br>
-              Quantity: {{ cart_item.quantity_of_items}}  <br>
-              Price: ${{ cart_item.price }} <br>
-        </div>
-        {% endfor %}
-        <a href="{% url 'cart_list'%}"><button class="add_to_cart">Add to cart</button></a>
-        <button class="add-to-cart-btn">Delete from Cart</button>   
-    </ul>
+     <table >
+        <thead >
+            <tr>
+                <th >Quantity</th>
+                <th >Price</th>
+                <th >Shipping Price</th>             
+                <th>image</th>
+            </tr>
+      
+     
+            {% for cart in carts  %}
+            <tr>
+                <td >{{cart.quantity}}</td>
+                <td >{{cart.price}}</td>
+                <td >{{cart.shipping_price}}</td>
+                <td >{{cart.image}}</td>
+
+                <td>
+                    <a href="{% url 'cart_detail_view' id=cart.id %}">View details</a>                  
+
+                </td>
+             
+            </tr>
+            {%endfor%}
+           
+        </tbody>
+    </table>
 </body>
 </html>

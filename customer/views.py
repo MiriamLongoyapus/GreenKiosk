@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .form import CustomerUploadForm
 from customer.models import Customer
 from django.shortcuts import redirect
+
 def customer_upload(request):
     form = CustomerUploadForm()
     return render(request,'customer/customer_upload.html',{'form': form})
